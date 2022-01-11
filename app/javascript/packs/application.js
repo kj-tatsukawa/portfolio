@@ -13,4 +13,4 @@ Turbolinks.start()
 ActiveStorage.start()
 
 require('jquery')
-require('edit.js')
+require('../packs/edit.js')
