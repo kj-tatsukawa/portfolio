@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # ====== home ======
-  # get 'top' => 'home#top'
-  root to: 'home#top'
+  get 'top' => 'home#top'
+  # root to: 'home#top'
 
   # ====== contents ======
   get ':menu_url/index' => 'contents#index'
