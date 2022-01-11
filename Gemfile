@@ -61,3 +61,5 @@ gem 'i18n_generators'
 group :production do
   gem 'pg'
 end
+
+gem 'uglifier'
