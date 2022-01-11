@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsBlog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="header-container">
+    <div class="header">
+      <h1>Rails Blog</h1>
+      <p>Ruby on Rails を使用して、丹精込めて作り上げました。</p>
+    </div>
+  </div>
+  <div class="header-tab">
+    <ul>
+      <li><%= link_to("トップ", "/top") %></li>
+      <% @menus.each do |menu| %>
+        <li><%= link_to(menu.menu_name, "/#{menu.menu_url}/index") %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <%= yield %>
+  </body>
+</html>

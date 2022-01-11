@@ -1,0 +1,72 @@
+// Place all the styles related to the contents controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// ====== index ======
+.new-post-btn {
+  margin: 0 auto;
+  max-width: 1000px;
+  text-align: right;
+}
+// ====== show ======
+.page-title-container {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.header-edit {
+  text-align: right;
+}
+
+.page-title {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Hiragino Maru Gothic Pro";
+}
+
+.page-body-container {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.page-body {
+  font-size: 23px;
+  font-family: "Hiragino Maru Gothic Pro";
+}
+
+// ====== edit ======
+.edit-form-name {
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+.page-title input {
+  width: 100%;
+  font-size: 25px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-family: "Hiragino Maru Gothic Pro";
+  border: 1px solid #d4d4d4;
+  border-radius: 5px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 500px;
+  font-family: "Hiragino Maru Gothic Pro";
+  border: 1px solid #d4d4d4;
+  border-radius: 5px;
+  resize: none;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  display: inline-block;
+  margin: 0 0 0 auto;
+  border-radius: 30px;
+  background-color: azure;
+  padding: 5px 20px;
+  border: 1px solid #d4d4d4;
+}

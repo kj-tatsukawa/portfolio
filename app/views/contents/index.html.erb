@@ -1,0 +1,13 @@
+<div class="new-post-btn">
+  <%= button_to '+ 新規投稿 +', {controller: 'contents', action: 'new'}, method: :get %>
+</div>
+<h2><%= @index_title.menu_name %></h2>
+<div class="top-body">
+  <div class="new-list">
+    <ul>
+      <% @pages_title.each do |page_title| %>
+        <li><%= link_to(page_title.page_title, "/#{page_title.content_type}/#{page_title.id}") %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

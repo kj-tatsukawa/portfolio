@@ -1,0 +1,11 @@
+<div class="page-title-container">
+  <div class="header-edit">
+    <p><%= link_to("編集", "/#{@page_detail.content_type}/#{@page_detail.id}/edit") %></p>
+  </div>
+  <div class="page-title"><%= @page_detail.page_title %>だよねぇ！</div>
+</div>
+<div class="page-body-container">
+  <div class="page-body">
+    <p><%= safe_join(@page_detail.page_body.split("\n"), tag(:br)) %></p>
+  </div>
+</div>
