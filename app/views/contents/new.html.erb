@@ -1,24 +1,24 @@
 <div class="page-title-container">
-  <%= button_to 'やっぱやめ…', "/top", method: :get %>
   <%= form_with model: @new_page, url: {controller: 'contents', action: 'create'} do |new_page| %>
-    <%= new_page.submit "これでよし！" %>
     <% @new_page.errors.full_messages.each do |message| %>
       <div class="form-error">
         <%= message %>
       </div>
     <% end %>
     <div class="page-title">
-      <%= new_page.collection_select(:content_type, Menu.all, :menu_url, :menu_name, {prompt: "記事のカテゴリを選びなさい"}) %>
+      <%= new_page.collection_select(:content_type, Menu.all, :menu_url, :menu_name, {prompt: "記事のカテゴリを選びなさい"}, {class: "collection-select-form"}) %>
       <p class="edit-form-name">ブログタイトル</p>
       <%= new_page.text_field :page_title %>
     </div>
-</div>
-    <div class="page-body-container">
-      <div class="page-body">
-        <p class="edit-form-name">本文</p>
-        <%= new_page.text_area :page_body, class: "auto-size" %>
-      </div>
+  </div>
+  <div class="page-body-container">
+    <div class="page-body">
+      <p class="edit-form-name">本文</p>
+      <%= new_page.text_area :page_body, class: "auto-size" %>
     </div>
+    <%= new_page.submit "これでよし！", class: "register-btn" %>
   <% end %>
+  <%= button_to 'やっぱやめ…', "/top", method: :get, class: "cancel-btn" %>
+</div>
 
-  <%= javascript_pack_tag 'edit' %>
+<%= javascript_pack_tag 'edit' %>

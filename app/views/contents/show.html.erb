@@ -1,6 +1,7 @@
 <div class="page-title-container">
   <div class="header-edit">
-    <p><%= link_to("編集", "/#{@page_detail.content_type}/#{@page_detail.id}/edit") %></p>
+    <%= button_to '編集', "/#{@page_detail.content_type}/#{@page_detail.id}/edit", method: :get, class: "cancel-btn" %>
+<!--    <p><%#= link_to("編集", "/#{@page_detail.content_type}/#{@page_detail.id}/edit") %></p>-->
   </div>
   <div class="page-title"><%= @page_detail.page_title %>だよねぇ！</div>
 </div>

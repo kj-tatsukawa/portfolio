@@ -15,7 +15,7 @@ class ContentsController < ApplicationController
   end
 
   def create
-    @new_page = Page.new(new_page_params)
+    @new_page = Page.new(page_params)
     if @new_page.save
       redirect_to("/#{@new_page.content_type}/index")
     else
@@ -23,7 +23,7 @@ class ContentsController < ApplicationController
     end
   end
 
-  def new_page_params
+  def page_params
     params.require(:page).permit(:page_title, :page_body, :content_type)
   end
 
@@ -32,10 +32,8 @@ class ContentsController < ApplicationController
   end
 
   def update
-    @page_detail = Page.find_by(id: params[:id])
-    @page_detail.page_title = params[:page_title]
-    @page_detail.page_body = params[:page_body]
-    if @page_detail.save
+    @page_detail = Page.find_by(params[:id])
+    if @page_detail.update(page_params)
       redirect_to("/#{@page_detail.content_type}/#{@page_detail.id}")
     else
       render("contents/edit")

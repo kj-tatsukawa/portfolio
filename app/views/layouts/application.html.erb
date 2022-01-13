@@ -13,11 +13,16 @@
   <body>
   <div class="header-container">
     <div class="header">
-      <h1>Rails Blog</h1>
+      <h1 class="top-link"><%= link_to "Rails Blog", '/top' %></h1>
       <p>Ruby on Rails を使用して、丹精込めて作り上げました。</p>
     </div>
   </div>
   <div class="header-tab">
+<!--    <div id="mask" class="hidden"></div>-->
+<!--    <div id="modal" class="hidden">-->
+<!--      <p>モーダルウィンドウ</p>-->
+<!--    </div>-->
+    <%#= link_to('+新規カテゴリ+', "/new_category", { remote: true }) %>
     <ul>
       <li><%= link_to("トップ", "/top") %></li>
       <% @menus.each do |menu| %>
