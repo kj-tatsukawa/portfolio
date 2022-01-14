@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   get ':content_type/:id/edit' => 'contents#edit'
 
   post 'create_post', to: 'contents#create_post'
-  # patch ':content_type/:id/update', to: 'contents#update'
-  post ':content_type/:id/update', to: 'contents#update'
+  patch ':content_type/:id/update', to: 'contents#update'
+  # post ':content_type/:id/update', to: 'contents#update'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
