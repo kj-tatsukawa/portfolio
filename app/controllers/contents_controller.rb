@@ -40,7 +40,7 @@ class ContentsController < ApplicationController
   end
 
   def update
-    @page_detail = Page.find_by(params[:id])
+    @page_detail = Page.find_by(id: params[:id])
     if @page_detail.update(page_params)
       redirect_to("/#{@page_detail.content_type}/#{@page_detail.id}")
     else
