@@ -1,0 +1,18 @@
+<%= form_with model: @new_category, url: {controller: 'home', action: 'create_category'} do |new_category| %>
+  <div class="page-body-container">
+    <div class="category-form-body">
+      <% @new_category.errors.full_messages.each do |message| %>
+        <div class="form-error">
+          <%= message %>
+        </div>
+      <% end %>
+      <p class="edit-form-name">メニュー名</p>
+      <%= new_category.text_field :menu_name %>
+      <p class="edit-form-name">カテゴリ名 ※要半角！</p>
+      <%= new_category.text_field :menu_url %>
+      <div class="btn-align">
+        <%= new_category.submit 'これでよし！', id: 'category-registry-btn' %>
+      </div>
+    </div>
+  </div>
+<% end %>

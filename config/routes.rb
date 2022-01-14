@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   # ====== home ======
   get 'top' => 'home#top'
+  get 'new_category', to: 'home#new_category'
+  get 'home/delete/administrator', to: 'home#delete_btn'
+
+  post 'create_category', to: 'home#create_category'
+  delete 'destroy', to: 'home#destroy'
+
 
   # ====== contents ======
   get ':menu_url/index' => 'contents#index'
@@ -8,7 +14,7 @@ Rails.application.routes.draw do
   get ':content_type/:id' => 'contents#show'
   get ':content_type/:id/edit' => 'contents#edit'
 
-  post 'create', to: 'contents#create'
+  post 'create_post', to: 'contents#create_post'
   patch ':content_type/:id/update', to: 'contents#update'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

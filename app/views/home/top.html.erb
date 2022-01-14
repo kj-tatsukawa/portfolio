@@ -5,9 +5,19 @@
 <div class="top-body">
   <div class="new-list">
     <ul>
-      <li>新規、更新を行なった場合に表示させる(desc)</li>
-      <li>リストをクリックすると該当ページに遷移</li>
-      <li>10件表示</li>
+      <% @top_news.each do |top_new| %>
+        <% if top_new.created_at == top_new.updated_at %>
+          <li>
+            <p class="time-stamp"><%= l top_new.created_at, format: :long %></p>
+            <%= link_to top_new.page_title, "/#{top_new.content_type}/#{top_new.id}" %><span class="post-create"> を投稿したぞ！</span>
+          </li>
+        <% else %>
+          <li>
+            <p class="time-stamp"><%= l top_new.updated_at, format: :long %></p>
+            <%= link_to top_new.page_title, "/#{top_new.content_type}/#{top_new.id}" %><span class="post-update"> を更新したぞ！！！</span>
+          </li>
+        <% end %>
+    <% end %>
     </ul>
   </div>
 </div>

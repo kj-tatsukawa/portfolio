@@ -1,23 +1,31 @@
 <div class="page-title-container">
-  <%= form_with model: @page_detail, url: {controller: 'contents', action: 'update'} do |page_detail| %>
-    <% @page_detail.errors.full_messages.each do |message| %>
-      <div class="form-error">
-        <%= message %>
-      </div>
-    <% end %>
-    <div class="page-title">
-      <%= page_detail.collection_select(:content_type, Menu.all, :menu_url, :menu_name, {prompt: "記事のカテゴリを選びなさい"}, {class: "collection-select-form"}) %>
-      <p class="edit-form-name">ブログタイトル</p>
-      <%= page_detail.text_field :page_title %>
+<%= form_with model: @page_detail, url: {controller: 'contents', action: 'update'} do |page_detail| %>
+  <% @page_detail.errors.full_messages.each do |message| %>
+    <div class="form-error">
+      <%= message %>
     </div>
-    </div>
-    <div class="page-body-container">
-      <div class="page-body">
-        <p class="edit-form-name">本文</p>
-        <%= page_detail.text_area :page_body, class: "auto-size" %>
-      </div>
-      <%= page_detail.submit "これでよし！", class: "register-btn" %>
   <% end %>
+  <div class="page-title">
+    <p class="edit-form-name">カテゴリ名</p>
+    <%= page_detail.collection_select(
+          :content_type,
+          Menu.all,
+          :menu_url,
+          :menu_name,
+          {prompt: "記事のカテゴリを選びなさい"},
+          {class: "collection-select-form"})
+    %>
+    <p class="edit-form-name">ブログタイトル</p>
+    <%= page_detail.text_field :page_title %>
+  </div>
+</div>
+<div class="page-body-container">
+  <div class="page-body">
+    <p class="edit-form-name">本文</p>
+    <%= page_detail.text_area :page_body, class: "auto-size" %>
+  </div>
+  <%= page_detail.submit "これでよし！", class: "register-btn" %>
+<% end %>
   <%= button_to 'やっぱやめ…', "/#{@page_detail.content_type}/#{@page_detail.id}", method: :get, class: "cancel-btn" %>
 </div>
 
