@@ -3,7 +3,7 @@ class ContentsController < ApplicationController
 
   def index
     @index_title = Menu.find_by(menu_url: params[:menu_url])
-    @pages_title = Page.where(content_type: params[:menu_url])
+    @pages_title = Page.where(content_type: params[:menu_url]).order(updated_at: :desc)
   end
 
   def show
