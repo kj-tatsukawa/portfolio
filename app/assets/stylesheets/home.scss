@@ -1,15 +1,97 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-ul {
+
+// ==================== 共通レイアウト ====================
+html, body, ul, ol , li, h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Hiragino Maru Gothic Pro";
+}
+
+li {
   list-style: none;
-  padding: 10px;
 }
 
 a {
   text-decoration: none;
 }
+// ====================================================================================================================
+// ================================================== PC用レイアウト ====================================================
+// ====================================================================================================================
 
+// ==================== header ====================
+header {
+  background-color: #400202;
+  height: 80px;
+  width: 100%;
+  line-height: 80px;
+  position: fixed;
+  z-index: 10;
+}
+
+header a {
+  color: white;
+}
+
+
+.header-logo {
+  width: 200px;
+  font-size: 25px;
+  margin-left: 50px;
+  letter-spacing: 3px;
+  float: left;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.header-logo a {
+  display: block;
+}
+
+.header-logo:hover {
+  background-color: darkred;
+}
+
+.header-list {
+  float: right;
+}
+
+
+.header-list li {
+  float: left;
+  margin-top: 15px;
+  margin-right: 15px;
+  line-height: 50px;
+  display: inline-block;
+  transition: all 0.5s;
+}
+
+.header-list a {
+  display: block;
+  padding: 0 20px;
+}
+
+.header-list li:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header-list li:last-child {
+  line-height: 80px;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header-list li:last-child:hover {
+  background-color: darkred;
+}
+
+// ====================  ====================
 h2 {
   max-width: 800px;
   margin: 0 auto;
@@ -20,7 +102,9 @@ h2 {
 .header-container {
   text-align: center;
   margin: 0 auto;
-  padding: 0 20px;
+  top: 80px;
+  //padding: 0 20px;
+  padding-top: 100px;
 }
 
 .top-link a {
@@ -135,53 +219,61 @@ h2 {
   border: 1px solid #d4d4d4;
 }
 
-// モーダル用
-//#overlay {
-//  width: 100%;
-//  height: 100%;
-//  position: fixed;
-//  top: 0;
-//  left: 0;
-//  background: rgba(0, 0, 0, 0.3);
-//  display: none;
-//  z-index: 1;
-//}
-//
-//#modal-window {
-//  width: 500px;
-//  height: 200px;
-//  position: absolute;
-//  top: 20%;
-//  left: 50%;
-//  transform: translate(-50%, -50%);
-//  background: white;
-//  z-index: 2;
-//  display: flex;
-//  flex-wrap: wrap;
-//  justify-content: space-between;
-//}
-//
-//.modal-message-box {
-//  width: 100%;
-//  height: calc(100% - 60%);
-//  text-align: center;
-//  display: flex;
-//  flex-direction: column;
-//  justify-content: space-around;
-//}
-//
-//#category-registry-btn {
-//  width: 50%;
-//  height: 60px;
-//}
+
+// ====================================================================================================================
+// ==================================================== レスポンシブ ====================================================
+// ====================================================================================================================
 
 // スマホ用
 @media screen and (max-width: 500px) {
-  ul {
-    list-style: none;
-    padding: 10px;
-    margin: 0 auto;
+// ==================== header ====================
+  header {
+    background-color: #400202;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    position: fixed;
+    z-index: 10;
   }
+
+  .header-logo {
+    width: 100px;
+    margin: 0;
+    font-size: 12.5px;
+    letter-spacing: 1.5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: none;
+    position: fixed;
+    z-index: 10;
+  }
+
+  .header-list {
+    display: inline-block;
+    font-size: 10px;
+    margin: 0;
+  }
+
+  .header-list li {
+    margin-top: 5px;
+    margin-right: 5px;
+    line-height: 30px;
+  }
+
+  .header-list a {
+    display: block;
+    padding: 0 10px;
+  }
+
+  .header-list li:last-child {
+    line-height: 40px;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 25px;
+  }
+
+// ==========
 
   h2 {
     font-size: 16px;
@@ -191,7 +283,7 @@ h2 {
   .header-container {
     text-align: center;
     margin: 0 auto;
-    padding: 0 20px;
+    padding-top: 50px;
   }
 
   .header {
@@ -300,40 +392,5 @@ h2 {
     border-radius: 30px;
     background-color: azure;
     border: 1px solid #d4d4d4;
-  }
-
-
-  // モーダル用
-  #mask {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-  }
-
-  #modal {
-    position: fixed;
-    top: 10vh;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    transform: translate(0, 0) scale(1);
-    transition: 0.2s;
-    z-index: 2;
-    width: 935px;
-  }
-
-  #mask.hidden {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  #modal.hidden {
-    opacity: 0;
-    visibility: hidden;
-    transform: translate(0, 0) scale(0.8);
   }
 }
