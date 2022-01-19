@@ -224,9 +224,9 @@ h2 {
 // ==================================================== レスポンシブ ====================================================
 // ====================================================================================================================
 
-// スマホ用
-@media screen and (max-width: 500px) {
-// ==================== header ====================
+// タブレット用
+@media screen and (max-width: 600px) {
+  // ==================== header ====================
   header {
     background-color: #400202;
     height: 40px;
@@ -273,7 +273,177 @@ h2 {
     width: 25px;
   }
 
-// ==========
+  // ==========
+
+  h2 {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .header-container {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+
+  .header {
+    font-family: "Hiragino Mincho Pro";
+  }
+
+  .header h1 {
+    font-size: 50px;
+    margin-bottom: 0;
+  }
+
+  .header p {
+    font-size: 10px;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .header-tab {
+    margin: 0 auto;
+    font-size: 15px;
+    text-align: center;
+    border-bottom: 1px solid #2E2F30;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .header-tab li {
+    display: inline-block;
+    width: auto;
+    padding: 5px;
+    border: none;
+  }
+
+  .top-body {
+    margin: 0 auto;
+    border: none;
+  }
+
+  .new-list li {
+    border: 1px solid #2E2F30;
+    margin: 5px auto;
+    padding: 4px;
+    font-size: 10px;
+    text-align: center;
+    //max-width: 800px;
+  }
+
+  .time-stamp {
+    text-align: left;
+    font-size: 5px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 0;
+  }
+
+  .post-create {
+    content: "新規！";
+    color: blue;
+    font-weight: bold;
+    font-size: 9px;
+  }
+
+  .post-update {
+    color: red;
+    font-weight: bold;
+    font-size: 9px;
+  }
+
+  .page-title-container {
+    margin: 0 auto;
+  }
+
+  .form-error {
+    text-align: left;
+    color: red;
+
+  }
+  .category-form-body {
+    width: 100%;
+    font-size: 12px;
+    padding: 5px;
+    margin: 0 auto;
+    font-family: "Hiragino Maru Gothic Pro";
+    box-sizing: border-box;
+  }
+
+  .category-form-body input {
+    width: 100%;
+    font-size: 15px;
+    padding: 5px;
+    margin: 0 auto;
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  .btn-align {
+    text-align: right;
+    margin: 5px;
+  }
+
+  .category-form-body input[type="submit"] {
+    width: 80px;
+    font-size: 6px;
+    border-radius: 30px;
+    background-color: azure;
+    border: 1px solid #d4d4d4;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  // ==================== header ====================
+  header {
+    background-color: #400202;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    position: fixed;
+    z-index: 10;
+  }
+
+  .header-logo {
+    width: 100px;
+    margin: 0;
+    font-size: 12.5px;
+    letter-spacing: 1.5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: none;
+    position: fixed;
+    z-index: 10;
+  }
+
+  .header-list {
+    display: inline-block;
+    font-size: 10px;
+    margin: 0;
+  }
+
+  .header-list li {
+    margin-top: 5px;
+    margin-right: 5px;
+    line-height: 30px;
+  }
+
+  .header-list a {
+    display: block;
+    padding: 0 10px;
+  }
+
+  .header-list li:last-child {
+    line-height: 40px;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 25px;
+  }
+
+  // ==========
 
   h2 {
     font-size: 16px;
