@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # ====== home ======
+  get '/', to: 'home#how_to_page'
   get 'top' => 'home#top'
   get 'new_category', to: 'home#new_category'
   get 'home/delete/administrator', to: 'home#delete_btn'

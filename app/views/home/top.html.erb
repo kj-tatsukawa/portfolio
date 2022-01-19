@@ -5,6 +5,7 @@
 <div class="top-body">
   <div class="new-list">
     <ul>
+      <li><%= link_to '当サイトの使い方', '/' %></li>
       <% @top_news.each do |top_new| %>
         <% if top_new.created_at == top_new.updated_at %>
           <li>
