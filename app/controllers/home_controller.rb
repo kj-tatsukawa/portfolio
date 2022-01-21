@@ -38,6 +38,7 @@ class HomeController < ApplicationController
       redirect_to "/top"
     else
       flash[:notice] = "件数0件！"
+      redirect_to "/top"
     end
   end
 
