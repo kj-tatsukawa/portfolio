@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// ==================== 共通レイアウト ====================
+// ====================================================================================================================
+// ================================================== 共通レイアウト ====================================================
+// ====================================================================================================================
 html, body, ul, ol , li, h1, h2, h3, h4, h5, h6, p, div {
   margin: 0;
   padding: 0;
@@ -19,11 +21,14 @@ li {
 a {
   text-decoration: none;
 }
+
 // ====================================================================================================================
 // ================================================== PC用レイアウト ====================================================
 // ====================================================================================================================
 
-// ==================== header ====================
+// ========================================================
+// ======================== header ========================
+// ========================================================
 header {
   background-color: #400202;
   height: 80px;
@@ -39,6 +44,7 @@ header a {
 
 
 .header-logo {
+  font-family: "Hiragino Mincho Pro";
   width: 200px;
   font-size: 25px;
   margin-left: 50px;
@@ -91,60 +97,115 @@ header a {
   background-color: darkred;
 }
 
-// ====================  ====================
-h2 {
-  max-width: 800px;
-  margin: 0 auto;
-  font-family: "Hiragino Maru Gothic Pro";
+// ===========================================================
+// ======================== top-title ========================
+// ===========================================================
+//h2 {
+//  max-width: 800px;
+//  margin: 0 auto;
+//  font-family: "Hiragino Maru Gothic Pro";
+//}
+
+.top-title {
+  margin:0 20px;
+  padding-top: 100px;
+  padding-bottom: 20px;
 }
 
-// PC用
-.header-container {
-  text-align: center;
+.title-container {
+  width: 80%;
   margin: 0 auto;
-  top: 80px;
-  //padding: 0 20px;
-  padding-top: 100px;
+  font-family: "Hiragino Mincho Pro";
+}
+
+.top-link {
+  font-size: 64px;
+  text-align: center;
+  letter-spacing: 10px;
 }
 
 .top-link a {
   color: black;
 }
 
-.header {
-  font-family: "Hiragino Mincho Pro";
-}
-.header h1 {
-  font-size: 64px;
-  margin-bottom: 0;
-}
-
-.header p {
-  font-size: 16px;
+.sub-title {
+  font-size: 20px;
   text-align: right;
-  margin-top: 0;
 }
 
-.header-tab {
-  margin: 0 auto;
+// ==========================================================
+// ======================== category ========================
+// ==========================================================
+.category {
+  width: 80%;
+  margin: 0 auto 30px auto;
   font-size: 25px;
   text-align: center;
   font-family: "Hiragino Maru Gothic Pro";
+  border-bottom: 2px solid gray;
 }
 
-.header-tab li {
+.category ul {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.category li {
+  position: relative;
   display: inline-block;
   width: 200px;
-  padding: 10px;
-  border: 1px solid #2E2F30;
+  height: 60px;
+  line-height: 60px;
+  border: 1px solid #cecece;
+  transition: all 0.5s;
 }
 
-.header-tab li:last-child {
-  border: none;
-  width: auto;
-  padding: 0;
-
+.category li:last-child a {
+  font-family: "Hiragino Mincho Pro";
+  display: block;
+  color: white;
 }
+
+.category li:last-child {
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  margin-top: 10px;
+  background-color: darkred;
+  transition: all 0.3s;
+}
+
+.category li:last-child:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.change-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  height: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  font-family: "Hiragino Mincho Pro";
+  font-size: 30px;
+  letter-spacing: 2px;
+  transition: all 0.5s;
+}
+
+.change-text a {
+  color: white;
+  display: block;
+}
+
+.change-text:hover {
+  background-color: rgba(139, 0, 0, 0.95);
+  opacity: 1;
+}
+
+// ====================  ====================
 
 .top-body {
   margin: 0 auto;
@@ -219,12 +280,21 @@ h2 {
   border: 1px solid #d4d4d4;
 }
 
+.destroy-link {
+  user-select: none;
+}
+
+.destroy-link a {
+  color: white;
+  cursor: default;
+}
+
 
 // ====================================================================================================================
 // ==================================================== レスポンシブ ====================================================
 // ====================================================================================================================
 
-// タブレット用
+// ====================== タブレット用 ==========================
 @media screen and (max-width: 600px) {
   // ==================== header ====================
   header {
@@ -275,46 +345,106 @@ h2 {
 
   // ==========
 
-  h2 {
-    font-size: 16px;
-    text-align: center;
-  }
+  // ===========================================================
+  // ======================== top-title ========================
+  // ===========================================================
+  //h2 {
+  //  max-width: 800px;
+  //  margin: 0 auto;
+  //  font-family: "Hiragino Maru Gothic Pro";
+  //}
 
-  .header-container {
-    text-align: center;
-    margin: 0 auto;
+  .top-title {
+    margin:0 10px;
     padding-top: 50px;
+    padding-bottom: 10px;
   }
 
-  .header {
+  .title-container {
+    width: 80%;
+    margin: 0 auto;
     font-family: "Hiragino Mincho Pro";
   }
 
-  .header h1 {
-    font-size: 50px;
-    margin-bottom: 0;
+  .top-link {
+    font-size: 32px;
+    letter-spacing: 5px;
+    text-align: center;
   }
 
-  .header p {
+  .top-link a {
+    color: black;
+  }
+
+  .sub-title {
     font-size: 10px;
     text-align: center;
-    margin-top: 0;
   }
 
-  .header-tab {
-    margin: 0 auto;
-    font-size: 15px;
+  // ==========================================================
+  // ======================== category ========================
+  // ==========================================================
+  .category {
+    width: 80%;
+    margin: 0 auto 15px auto;
+    font-size: 12.5px;
     text-align: center;
-    border-bottom: 1px solid #2E2F30;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    font-family: "Hiragino Maru Gothic Pro";
+    border-bottom: 1px solid gray;
   }
 
-  .header-tab li {
+  .category ul {
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }
+
+  .category li {
+    position: relative;
     display: inline-block;
-    width: auto;
-    padding: 5px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
     border: none;
+  }
+
+  .category li:last-child a {
+    display: block;
+    color: white;
+  }
+
+
+  .base-text {
+    display: none;
+  }
+
+  .change-text {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(139, 0, 0, 0.95);
+    opacity: 1;
+    height: 40px;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-family: "Hiragino Mincho Pro";
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  .change-text a {
+    display: block;
+    color: white;
+  }
+
+  // ====================  ====================
+
+  // ======================================
+
+  h2 {
+    font-size: 16px;
+    text-align: center;
   }
 
   .top-body {
