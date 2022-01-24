@@ -204,6 +204,24 @@ header {
 }
 
 
+// ====================== How to Page ========================
+.how-to-page {
+  width: 900px;
+  margin: 0 auto;
+  h3 {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  p {
+    margin: 5px;
+    font-size: 20px;
+  }
+}
+
+
+
 // ====================  ====================
 
 .top-body {
@@ -362,7 +380,7 @@ header {
   .category {
     margin: 0 auto 15px auto;
     font-size: 12.5px;
-    font-family: "Hiragino Maru Gothic Pro";
+    font-family: "Hiragino Maru Gothic Pro", serif;
     border-bottom: 1px solid gray;
 
     ul {
@@ -400,6 +418,22 @@ header {
     font-size: 16px;
     text-align: center;
   }
+
+  .how-to-page {
+    width: 500px;
+
+    h3 {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    p {
+      margin: 5px;
+      font-size: 13px;
+    }
+  }
+
 
   .top-body {
     margin: 0 auto;
@@ -500,45 +534,37 @@ header {
     }
   }
 
+  .top-title, .category {
+    display: none;
+  }
+
+
+
   // ==========
 
   h2 {
     font-size: 16px;
     text-align: center;
-  }
-
-  // ==========================================================
-  // ======================== category ========================
-  // ==========================================================
-  .category {
-    margin: 0 auto 10px auto;
-    border-bottom: 1px solid gray;
-
-    ul {
-      margin-top: 7px;
-      margin-bottom: 17px;
-    }
-
-    li {
-      width: 70px;
-    }
-  }
-
-  .change-text {
-    top: 20%;
-    background-color: rgba(139, 0, 0, 0.95);
-    opacity: 1;
-    height: 40px;
-    line-height: 40px;
-    font-size: 15px;
-    letter-spacing: 1px;
-
-    a {
-      font-size: 8px;
-    }
+    margin-top: 0;
   }
 
 // ==============================================
+
+  .how-to-page {
+    padding-top: 20px;
+    width: auto;
+
+    h3 {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    p {
+      margin: 5px;
+      font-size: 10px;
+    }
+  }
 
   .top-body {
     margin: 0 auto;

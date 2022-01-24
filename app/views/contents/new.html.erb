@@ -1,5 +1,5 @@
 <div class="page-title-container">
-<%= form_with model: @new_page, url: {controller: 'contents', action: 'create_post'} do |new_page| %>
+<%= form_with model: [@new_page], url: {controller: 'contents', action: 'create_post'} do |new_page| %>
   <% @new_page.errors.full_messages.each do |message| %>
     <div class="form-error">
       <%= message %>

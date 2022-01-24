@@ -11,15 +11,8 @@ class ContentsController < ApplicationController
   end
 
   def new
+    @category = Menu.all
     @new_page = Page.new
-    # unless Menu.exists?(id: 99)
-    #   @menu = Menu.new(
-    #     id: 99,
-    #     menu_name: 'カテゴリを作る',
-    #     menu_url: 'new_category'
-    #   )
-    #   @menu.save
-    # end
   end
 
   def create_post
@@ -46,10 +39,6 @@ class ContentsController < ApplicationController
     else
       render("contents/edit")
     end
-  end
-
-  def ajax
-    @content_type = params[:content_type]
   end
 
 end
