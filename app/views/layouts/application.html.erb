@@ -42,6 +42,9 @@
         <li><%= link_to '+', '/new_category' %></li>
       </ul>
     </div>
+    <div class="new-post-btn">
+      <%= button_to '+ 新規投稿 +', {controller: 'contents', action: 'new'}, method: :get %>
+    </div>
     <% if flash[:notice] %>
       <%= flash[:notice]%>
     <% end %>

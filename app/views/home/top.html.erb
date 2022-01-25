@@ -1,24 +1,25 @@
-<div class="new-post-btn">
-  <%= button_to '+ 新規投稿 +', {controller: 'contents', action: 'new'}, method: :get %>
-</div>
-<h2>トップ</h2>
-<div class="top-body">
-  <div class="new-list">
+<div class="index-container">
+  <div class="index-title">
+    <h2>トップ</h2>
+  </div>
+  <div class="index-body">
     <ul>
       <li><%= link_to '当サイトの使い方', '/' %></li>
       <% @top_news.each do |top_new| %>
+        <li>
         <% if top_new.created_at == top_new.updated_at %>
-          <li>
-            <p class="time-stamp"><%= l top_new.created_at, format: :long %></p>
-            <%= link_to top_new.page_title, "/#{top_new.content_type}/#{top_new.id}" %><span class="post-create"> を投稿したぞ！</span>
-          </li>
+          <span class="notice">
+            <%= l top_new.created_at, format: :long %><i class="post-create"> NEW!</i>
+          </span>
+          <%= link_to top_new.page_title, "/#{top_new.content_type}/#{top_new.id}" %>
         <% else %>
-          <li>
-            <p class="time-stamp"><%= l top_new.updated_at, format: :long %></p>
-            <%= link_to top_new.page_title, "/#{top_new.content_type}/#{top_new.id}" %><span class="post-update"> を更新したぞ！！！</span>
-          </li>
+          <span class="notice notice-update">
+            <%= l top_new.created_at, format: :long %><i class="post-update"> UPDATE!!!</i>
+          </span>
+          <%= link_to top_new.page_title, "/#{top_new.content_type}/#{top_new.id}" %>
         <% end %>
-    <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>

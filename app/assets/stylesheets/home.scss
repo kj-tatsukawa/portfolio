@@ -42,6 +42,13 @@ header {
   }
 }
 
+// PCならば非表示
+@media screen and (min-width: 600px) {
+  header {
+    display: none;
+  }
+}
+
 .header-logo {
   font-family: "Hiragino Mincho Pro";
   width: 200px;
@@ -98,15 +105,9 @@ header {
 // ===========================================================
 // ======================== top-title ========================
 // ===========================================================
-//h2 {
-//  max-width: 800px;
-//  margin: 0 auto;
-//  font-family: "Hiragino Maru Gothic Pro";
-//}
-
 .top-title {
   margin:0 20px;
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 20px;
 }
 
@@ -220,45 +221,39 @@ header {
   }
 }
 
+.new-post-btn {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding-right: 10px;
+  text-align: right;
+}
 
 
 // ====================  ====================
 
-.top-body {
-  margin: 0 auto;
-  max-width: 1000px;
-  border: 2px solid #730E15;
-  font-family: "Hiragino Maru Gothic Pro";
-}
-
-.new-list li {
-  border: 1px solid #2E2F30;
-  margin: 10px auto;
-  padding: 10px;
-  font-size: 25px;
-  text-align: center;
-  //max-width: 800px;
-}
-
 .time-stamp {
+  font-family: "Hiragino Mincho Pro";
   text-align: left;
   font-size: 10px;
   font-weight: bold;
   font-style: italic;
   padding: 0;
   margin: 0;
+
 }
 
 .post-create {
+  font-family: "Hiragino Mincho Pro";
   color: blue;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .post-update {
+  font-family: "Hiragino Mincho Pro";
   color: red;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .page-title-container {
@@ -352,12 +347,6 @@ header {
   // ===========================================================
   // ======================== top-title ========================
   // ===========================================================
-  //h2 {
-  //  max-width: 800px;
-  //  margin: 0 auto;
-  //  font-family: "Hiragino Maru Gothic Pro";
-  //}
-
   .top-title {
     margin:0 10px;
     padding-top: 50px;
@@ -410,15 +399,13 @@ header {
     letter-spacing: 1px;
   }
 
+  .new-post-btn {
+    padding-right: 30px;
+  }
+
   // ====================  ====================
 
   // ======================================
-
-  h2 {
-    font-size: 16px;
-    text-align: center;
-  }
-
   .how-to-page {
     width: 500px;
 
@@ -538,6 +525,10 @@ header {
     display: none;
   }
 
+  .new-post-btn {
+    padding-top: 45px;
+    padding-right: 10px;
+  }
 
 
   // ==========

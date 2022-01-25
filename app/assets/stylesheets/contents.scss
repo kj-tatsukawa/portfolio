@@ -2,12 +2,79 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// ====== index ======
-.new-post-btn {
-  margin: 0 auto;
+
+// ====================================================================================================================
+// ================================================== PC用レイアウト ====================================================
+// ====================================================================================================================
+
+// =======================================================
+// ======================== index ========================
+// =======================================================
+.index-container {
   max-width: 1000px;
-  text-align: right;
+  margin: 0 auto;
 }
+
+.index-title {
+  width: 500px;
+  padding: 5px 0;
+  text-align: center;
+  font-family: "YuKyokasho Yoko";
+  color: white;
+  background: linear-gradient(90deg, white, darkred, darkred, white);
+
+  h2 {
+    letter-spacing: 3px;
+  }
+}
+
+.index-body {
+  margin: 10px;
+  padding: 10px;
+
+  li {
+    margin-bottom: 25px;
+    border: 0.23px solid gray;
+    position: relative;
+
+    a {
+      color: black;
+      display: block;
+      padding: 10px 0;
+      text-align: center;
+      letter-spacing: 2px;
+      transition: all, 0.3s;
+
+      &:hover {
+        background-color: darkred;
+        font-family: "YuKyokasho Yoko";
+        color: white;
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+.notice {
+  background-color: white;
+  border: 0.5px solid #bbb;
+  border-radius: 3px;
+  padding: 5px;
+  position: absolute;
+  top: -20%;
+  left: 10px;
+  font-size: 10px;
+  transition: all 0.2s;
+}
+
+.index-body li:hover .notice {
+  background-color: #f3f3f3;
+  position: absolute;
+  top: -30%;
+  font-size: 10px;
+}
+
+// ====================  ====================
 
 // ====== show ======
 .page-title-container {
@@ -96,14 +163,219 @@ input[type="submit"] {
   margin-top: 20px;
 }
 
-// スマホ用
-@media screen and (max-width: 500px) {
-  // ====== index ======
-  .new-post-btn {
+// ====================================================================================================================
+// ==================================================== レスポンシブ ====================================================
+// ==================================================== タブレット用 ====================================================
+// ====================================================================================================================
+@media screen and (max-width: 600px) {
+  // =======================================================
+  // ======================== index ========================
+  // =======================================================
+  .index-title {
+    width: auto;
+    margin: 10px;
+    padding: 5px 0;
+    font-family: "YuKyokasho Yoko";
+    color: white;
+    background: linear-gradient(90deg, white, darkred, darkred, white);
+  }
+
+  .index-body {
+    margin: 5px;
+    padding: 5px;
+
+    li {
+      margin-bottom: 12px;
+      border: 0.23px solid gray;
+      position: relative;
+
+      a {
+        color: black;
+        display: block;
+        padding: 5px 0;
+        text-align: center;
+        letter-spacing: 2px;
+
+        &:hover {
+          background-color: darkred;
+          font-family: "YuKyokasho Yoko";
+          color: white;
+          font-size: initial;
+        }
+      }
+    }
+  }
+
+  .notice {
+    background-color: white;
+    border: 0.5px solid #bbb;
+    border-radius: 3px;
+    padding: 0 5px;
+    position: absolute;
+    top: -20%;
+    left: 10px;
+    font-size: 10px;
+    transition: all 0.2s;
+  }
+
+  .index-body li:hover .notice {
+    background-color: #f3f3f3;
+    position: absolute;
+    top: -25%;
+    font-size: 10px;
+  }
+
+  // ====================  ====================
+  // ====== show ======
+  .page-title-container {
     margin: 0 auto;
     padding-top: 50px;
+    width: auto;
+  }
+
+  .form-error {
+    font-size: 9px;
+    text-align: left;
+    color: red;
+  }
+
+  .header-edit {
     text-align: right;
   }
+
+  .page-title {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Hiragino Maru Gothic Pro";
+  }
+
+  .page-body-container {
+    margin: 0 auto;
+  }
+
+  .page-body {
+    font-size: 15px;
+    font-family: "Hiragino Maru Gothic Pro";
+  }
+
+  // ====== edit ======
+  .edit-form-name {
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+
+  .page-title input {
+    width: 100%;
+    font-size: 12px;
+    padding: 5px;
+    margin: 0 auto;
+    font-family: "Hiragino Maru Gothic Pro";
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 190px;
+    font-family: "Hiragino Maru Gothic Pro";
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;
+    resize: none;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .cancel-btn {
+  }
+
+  .register-btn {
+    float: right;
+  }
+
+  input[type="submit"] {
+    margin: 10px 0 0 auto;
+    border-radius: 30px;
+    background-color: azure;
+    padding: 5px 10px;
+    border: 1px solid #d4d4d4;
+    font-size: 10px;
+  }
+
+  .collection-select-form {
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
+  .category-form.is-hidden {
+    display: none;
+  }
+
+}
+
+// スマホ用
+@media screen and (max-width: 500px) {
+  // =======================================================
+  // ======================== index ========================
+  // =======================================================
+  .index-title {
+    width: auto;
+    margin: 10px;
+    padding: 5px 0;
+    font-family: "YuKyokasho Yoko";
+    color: white;
+    background: linear-gradient(90deg, white, darkred, darkred, white);
+  }
+
+  .index-body {
+    margin: 5px;
+    padding: 5px;
+
+    li {
+      margin-bottom: 12px;
+      border: 0.23px solid gray;
+      position: relative;
+
+      a {
+        color: black;
+        display: block;
+        padding: 5px 0;
+        text-align: center;
+        letter-spacing: 2px;
+
+        &:hover {
+          background-color: darkred;
+          font-family: "YuKyokasho Yoko";
+          color: white;
+          font-size: initial;
+        }
+      }
+    }
+  }
+
+  .notice {
+    background-color: white;
+    border: 0.5px solid #bbb;
+    border-radius: 3px;
+    padding: 0 5px;
+    position: absolute;
+    top: -25%;
+    left: 33%;
+    font-size: 10px;
+    transition: all 0.2s;
+  }
+
+  .index-body li:hover .notice {
+    background-color: #f3f3f3;
+    position: absolute;
+    top: -25%;
+    font-size: 10px;
+  }
+
+  // ====================  ====================
   // ====== show ======
   .page-title-container {
     margin: 0 auto;
