@@ -24,21 +24,23 @@ class ContentsController < ApplicationController
     end
   end
 
-  def page_params
-    params.require(:page).permit(:page_title, :page_body, :content_type)
-  end
 
   def edit
+    @category = Menu.all
     @page_detail = Page.find_by(id: params[:id])
   end
 
   def update
-    @page_detail = Page.find_by(id: params[:id])
+    @page_detail = Page.find(params[:id])
     if @page_detail.update(page_params)
       redirect_to("/#{@page_detail.content_type}/#{@page_detail.id}")
     else
       render("contents/edit")
     end
+  end
+
+  def page_params
+    params.require(:page).permit(:page_title, :content_type, :page_body)
   end
 
 end

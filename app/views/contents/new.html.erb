@@ -1,32 +1,24 @@
-<div class="page-title-container">
-<%= form_with model: [@new_page], url: {controller: 'contents', action: 'create_post'} do |new_page| %>
-  <% @new_page.errors.full_messages.each do |message| %>
-    <div class="form-error">
-      <%= message %>
-    </div>
-  <% end %>
-  <div class="page-title">
-    <p class="edit-form-name">カテゴリ名</p>
-    <%= new_page.collection_select(
-          :content_type,
-          Menu.all,
-          :menu_url,
-          :menu_name,
-          {prompt: "記事のカテゴリを選びなさい"},
-          {class: "collection-select-form"})
-    %>
-    <p class="edit-form-name">ブログタイトル</p>
-    <%= new_page.text_field :page_title %>
-  </div>
-</div>
-<div class="page-body-container">
-  <div class="page-body">
-    <p class="edit-form-name">本文</p>
-    <%= new_page.text_area :page_body, class: "auto-size" %>
-  </div>
+<div class="page-container">
+<%= form_with model: @new_page, url: {controller: 'contents', action: 'create_post'} do |new_page| %>
+  <p class="form-name">カテゴリ名</p>
+  <%= new_page.collection_select(
+        :content_type,
+        Menu.all,
+        :menu_url,
+        :menu_name,
+        {prompt: "記事のカテゴリを選びなさい"},
+        {class: "collection-select-form"}) %>
+  <p class="form-name">ブログタイトル</p>
+  <%= new_page.text_field :page_title, class: "form-body content-form-title" %>
+  <p class="form-name">見出し</p>
+  <%= new_page.text_field :page_body, class: "page-contents form-body content-form-index page-index" %>
+  <p class="form-name">コンテンツ</p>
+  <%= new_page.text_area :page_body, class: "page-contents form-body content-form-detail page-content" %>
+  <%= new_page.hidden_field :page_body, class: "jquery-test", value: "" %>
+<!--  <p class="jquery-test"></p>-->
   <%= new_page.submit "これでよし！", class: "register-btn" %>
 <% end %>
   <%= button_to 'やっぱやめ…', "/top", method: :get, class: "cancel-btn" %>
 </div>
 
-<%= javascript_pack_tag 'edit' %>
+<%= javascript_pack_tag 'edit', 'text_clip' %>

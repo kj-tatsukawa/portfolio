@@ -1,32 +1,27 @@
-<div class="page-title-container">
+<div class="page-container">
 <%= form_with model: @page_detail, url: {controller: 'contents', action: 'update'} do |page_detail| %>
-  <% @page_detail.errors.full_messages.each do |message| %>
-    <div class="form-error">
-      <%= message %>
-    </div>
-  <% end %>
-  <div class="page-title">
-    <p class="edit-form-name">カテゴリ名</p>
-    <%= page_detail.collection_select(
-          :content_type,
-          Menu.all,
-          :menu_url,
-          :menu_name,
-          {prompt: "記事のカテゴリを選びなさい"},
-          {class: "collection-select-form"})
-    %>
-    <p class="edit-form-name">ブログタイトル</p>
-    <%= page_detail.text_field :page_title %>
-  </div>
-</div>
-<div class="page-body-container">
-  <div class="page-body">
-    <p class="edit-form-name">本文</p>
-    <%= page_detail.text_area :page_body, class: "auto-size" %>
-  </div>
+  <p class="form-name">カテゴリ名</p>
+  <%= page_detail.collection_select(
+        :content_type,
+        Menu.all,
+        :menu_url,
+        :menu_name,
+        {class: "collection-select-form"}) %>
+  <p class="form-name">ブログタイトル</p>
+  <%= page_detail.text_field :page_title, class: "form-body content-form-title" %>
+  <p class="form-name">見出し</p>
+  <%= page_detail.text_field :page_body,
+                             class: "page-contents form-body content-form-index page-index",
+                             value:@page_detail.page_body.sub(/<p>.*/m, '').sub('<h3>', '').sub('</h3>', '')  %>
+  <p class="form-name">コンテンツ</p>
+  <%= page_detail.text_area :page_body,
+                            class: "page-contents form-body content-form-detail page-content",
+                            value: @page_detail.page_body.sub(/.*<p>/, '').sub('</p>', '') %>
+  <%= page_detail.hidden_field :page_body, class: "jquery-test", value: "" %>
   <%= page_detail.submit "これでよし！", class: "register-btn" %>
 <% end %>
+<!--  <p class="jquery-test"></p>-->
   <%= button_to 'やっぱやめ…', "/#{@page_detail.content_type}/#{@page_detail.id}", method: :get, class: "cancel-btn" %>
 </div>
 
-<%= javascript_pack_tag 'edit' %>
+<%= javascript_pack_tag 'edit', 'text_clip' %>

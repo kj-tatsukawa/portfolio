@@ -76,11 +76,91 @@
 
 // ====================  ====================
 
-// ====== show ======
-.page-title-container {
-  margin: 0 auto;
-  max-width: 1000px;
+// =======================================================
+// ========================= new =========================
+// =======================================================
+
+//textarea {
+//  width: 100%;
+//  min-height: 500px;
+//  border: 1px solid #d4d4d4;
+//  border-radius: 5px;
+//  resize: none;
+//  padding: 10px;
+//  font-size: 16px;
+//  box-sizing: border-box;
+//}
+
+.form-name {
+  font-size: 15px;
+  margin-top: 10px;
 }
+
+.collection-select-form {
+  padding: 5px;
+  font-size: 20px;
+}
+
+.form-body {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #d4d4d4;
+  border-radius: 5px;
+}
+
+.content-form-title {
+  font-size: 30px;
+}
+
+.content-form-index {
+  font-size: 25px;
+}
+
+.content-form-detail {
+  min-height: 200px;
+  font-size: 18px;
+  resize: none;
+}
+
+// ======================================================
+// ======================== show ========================
+// ======================================================
+
+.edit-btn {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.content-title {
+  margin:5px auto 30px auto;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: #600000;
+  color: white;
+}
+
+.content-body {
+  border-top: 1px solid gray;
+
+  h3 {
+    width: 80%;
+    margin-left: 10px;
+    padding: 5px;
+    background: linear-gradient(90deg, darkred, #f8f8f8);
+    color: white;
+    font-size: 23px;
+  }
+
+  p {
+    margin-top: 10px;
+    margin-left: 12px;
+    font-size: 20px;
+    //border: 1px solid gray;
+  }
+}
+
 
 .form-error {
   font-size: 18px;
@@ -88,25 +168,12 @@
   color: red;
 }
 
-.header-edit {
-  text-align: right;
-}
 
-.page-title {
-  font-size: 25px;
-  font-weight: bold;
-  font-family: "Hiragino Maru Gothic Pro";
-}
+//.page-body-container {
+//  margin: 0 auto;
+//  max-width: 1000px;
+//}
 
-.page-body-container {
-  margin: 0 auto;
-  max-width: 1000px;
-}
-
-.page-body {
-  font-size: 23px;
-  font-family: "Hiragino Maru Gothic Pro";
-}
 
 // ====== edit ======
 .edit-form-name {
@@ -127,17 +194,7 @@
   box-sizing: border-box;
 }
 
-textarea {
-  width: 100%;
-  min-height: 500px;
-  font-family: "Hiragino Maru Gothic Pro";
-  border: 1px solid #d4d4d4;
-  border-radius: 5px;
-  resize: none;
-  padding: 10px;
-  font-size: 16px;
-  box-sizing: border-box;
-}
+
 
 input[type="submit"] {
   display: inline-block;
@@ -150,17 +207,8 @@ input[type="submit"] {
   -webkit-text-fill-color: black;
 }
 
-.cancel-btn {
-}
-
 .register-btn {
   float: right;
-}
-
-.collection-select-form {
-  padding: 5px;
-  font-size: 20px;
-  margin-top: 20px;
 }
 
 // ====================================================================================================================

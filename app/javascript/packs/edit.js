@@ -1,5 +1,5 @@
 $(function () {
-  $('textarea.auto-size')
+  $('.content-form-detail')
     .on('change keyup keydown paste cut', function (){
       if ($(this).outerHeight() > this.scrollHeight) {
         $(this).height(1)
@@ -9,16 +9,3 @@ $(function () {
       }
     })
 })
-
-// $(function () {
-//   $(document).on('change keyup keydown paste cut',
-//       'textarea.auto-size',function (){
-//       if ($(this).outerHeight() > this.scrollHeight) {
-//         $(this).height(1)
-//       }
-//       while ($(this).outerHeight() < this.scrollHeight) {
-//         $(this).height($(this).height() + 1)
-//       }
-//     })
-// })
-

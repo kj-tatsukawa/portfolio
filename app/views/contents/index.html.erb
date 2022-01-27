@@ -1,14 +1,19 @@
-<div class="index-container">
-  <div class="index-title">
-    <h2><%= @index_title.menu_name %></h2>
+<div class="page-container">
+  <div class="new-post-btn">
+    <%= button_to '+ 新規投稿 +', {controller: 'contents', action: 'new'}, method: :get %>
   </div>
-  <div class="index-body">
-    <ul>
-      <% @pages_title.each do |page_title| %>
-        <li>
-          <span class="notice"><%= l page_title.created_at, format: :long %></span>
-          <%= link_to(page_title.page_title, "/#{page_title.content_type}/#{page_title.id}") %></li>
-      <% end %>
-    </ul>
+  <div class="index-container">
+    <div class="index-title">
+      <h2><%= @index_title.menu_name %></h2>
+    </div>
+    <div class="index-body">
+      <ul>
+        <% @pages_title.each do |page_title| %>
+          <li>
+            <span class="notice"><%= l page_title.updated_at, format: :long %></span>
+            <%= link_to(page_title.page_title, "/#{page_title.content_type}/#{page_title.id}") %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <title>RailsBlog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -42,12 +42,11 @@
         <li><%= link_to '+', '/new_category' %></li>
       </ul>
     </div>
-    <div class="new-post-btn">
-      <%= button_to '+ 新規投稿 +', {controller: 'contents', action: 'new'}, method: :get %>
+    <div id="back-color">
+      <% if flash[:notice] %>
+        <%= flash[:notice]%>
+      <% end %>
+      <%= yield %>
     </div>
-    <% if flash[:notice] %>
-      <%= flash[:notice]%>
-    <% end %>
-    <%= yield %>
   </body>
 </html>

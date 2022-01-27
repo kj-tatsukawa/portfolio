@@ -14,3 +14,4 @@ ActiveStorage.start()
 
 require('jquery')
 require('../packs/edit.js')
+require('../packs/text_clip.js')
