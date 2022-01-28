@@ -1,6 +1,6 @@
 <div class="page-container">
-  <div class="edit-btn">
-    <%= button_to '編集', "/#{@page_detail.content_type}/#{@page_detail.id}/edit", method: :get, class: "edit-btn" %>
+  <div class="btn-container">
+    <%= button_to '編　集', "/#{@page_detail.content_type}/#{@page_detail.id}/edit", method: :get, class: "btn edit-btn" %>
   </div>
   <h2 class="content-title"><%= @page_detail.page_title %>だよねぇ！</h2>
   <div class="content-body">

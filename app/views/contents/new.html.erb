@@ -11,14 +11,14 @@
   <p class="form-name">ブログタイトル</p>
   <%= new_page.text_field :page_title, class: "form-body content-form-title" %>
   <p class="form-name">見出し</p>
-  <%= new_page.text_field :page_body, class: "page-contents form-body content-form-index page-index" %>
+  <%= new_page.text_field :page_body, class: "page-contents page-index form-body content-form-index" %>
   <p class="form-name">コンテンツ</p>
-  <%= new_page.text_area :page_body, class: "page-contents form-body content-form-detail page-content" %>
+  <%= new_page.text_area :page_body, class: "page-contents page-content form-body content-form-detail" %>
   <%= new_page.hidden_field :page_body, class: "jquery-test", value: "" %>
 <!--  <p class="jquery-test"></p>-->
-  <%= new_page.submit "これでよし！", class: "register-btn" %>
+  <%= new_page.submit "これでよし！", class: "btn register-btn" %>
 <% end %>
-  <%= button_to 'やっぱやめ…', "/top", method: :get, class: "cancel-btn" %>
+  <%= button_to 'やっぱやめ…', "/top", method: :get, class: "btn cancel-btn" %>
 </div>
 
 <%= javascript_pack_tag 'edit', 'text_clip' %>

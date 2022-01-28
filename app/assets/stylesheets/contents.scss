@@ -2,14 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+// ====================================================================================================================
+// ================================================== 共通レイアウト ====================================================
+// ====================================================================================================================
+.btn-container {
+  text-align: right;
+}
 
 // ====================================================================================================================
 // ================================================== PC用レイアウト ====================================================
 // ====================================================================================================================
 
 // =======================================================
-// ======================== index ========================
+// ===================== top & index =====================
 // =======================================================
+.new-btn {
+  float: right;
+}
+
 .index-container {
   max-width: 1000px;
   margin: 0 auto;
@@ -74,31 +84,18 @@
   font-size: 10px;
 }
 
-// ====================  ====================
-
 // =======================================================
-// ========================= new =========================
+// ====================== new & edit =====================
 // =======================================================
-
-//textarea {
-//  width: 100%;
-//  min-height: 500px;
-//  border: 1px solid #d4d4d4;
-//  border-radius: 5px;
-//  resize: none;
-//  padding: 10px;
-//  font-size: 16px;
-//  box-sizing: border-box;
-//}
-
 .form-name {
   font-size: 15px;
   margin-top: 10px;
 }
 
 .collection-select-form {
-  padding: 5px;
-  font-size: 20px;
+    width: 300px;
+    padding: 5px;
+    font-size: 20px;
 }
 
 .form-body {
@@ -123,13 +120,17 @@
   resize: none;
 }
 
+.register-btn {
+  float: right;
+}
+
 // ======================================================
 // ======================== show ========================
 // ======================================================
-
 .edit-btn {
-  text-align: right;
-  padding-right: 10px;
+  padding: 0 20px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .content-title {
@@ -157,58 +158,7 @@
     margin-top: 10px;
     margin-left: 12px;
     font-size: 20px;
-    //border: 1px solid gray;
   }
-}
-
-
-.form-error {
-  font-size: 18px;
-  text-align: left;
-  color: red;
-}
-
-
-//.page-body-container {
-//  margin: 0 auto;
-//  max-width: 1000px;
-//}
-
-
-// ====== edit ======
-.edit-form-name {
-  font-size: 15px;
-  font-weight: bold;
-  margin-left: 10px;
-  margin-bottom: 0;
-}
-
-.page-title input {
-  width: 100%;
-  font-size: 25px;
-  padding: 10px;
-  margin-bottom: 10px;
-  font-family: "Hiragino Maru Gothic Pro";
-  border: 1px solid #d4d4d4;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-
-
-input[type="submit"] {
-  display: inline-block;
-  margin: 0 0 0 auto;
-  border-radius: 30px;
-  background-color: azure;
-  padding: 5px 20px;
-  border: 1px solid #d4d4d4;
-  -webkit-appearance: none;
-  -webkit-text-fill-color: black;
-}
-
-.register-btn {
-  float: right;
 }
 
 // ====================================================================================================================
@@ -217,15 +167,16 @@ input[type="submit"] {
 // ====================================================================================================================
 @media screen and (max-width: 600px) {
   // =======================================================
-  // ======================== index ========================
+  // ===================== top & index =====================
   // =======================================================
+  .new-btn {
+    float: none;
+  }
+
   .index-title {
     width: auto;
     margin: 10px;
     padding: 5px 0;
-    font-family: "YuKyokasho Yoko";
-    color: white;
-    background: linear-gradient(90deg, white, darkred, darkred, white);
   }
 
   .index-body {
@@ -273,102 +224,75 @@ input[type="submit"] {
     font-size: 10px;
   }
 
-  // ====================  ====================
-  // ====== show ======
-  .page-title-container {
-    margin: 0 auto;
-    padding-top: 50px;
-    width: auto;
+  // =======================================================
+  // ====================== new & edit =====================
+  // =======================================================
+  .content-form-title {
+    font-size: 25px;
   }
 
-  .form-error {
-    font-size: 9px;
-    text-align: left;
-    color: red;
+  .content-form-index {
+    font-size: 20px;
   }
 
-  .header-edit {
-    text-align: right;
-  }
-
-  .page-title {
+  .content-form-detail {
+    min-height: 200px;
     font-size: 18px;
-    font-weight: bold;
-    font-family: "Hiragino Maru Gothic Pro";
-  }
-
-  .page-body-container {
-    margin: 0 auto;
-  }
-
-  .page-body {
-    font-size: 15px;
-    font-family: "Hiragino Maru Gothic Pro";
-  }
-
-  // ====== edit ======
-  .edit-form-name {
-    font-size: 10px;
-    font-weight: bold;
-    margin-left: 10px;
-    margin-bottom: 0;
-  }
-
-  .page-title input {
-    width: 100%;
-    font-size: 12px;
-    padding: 5px;
-    margin: 0 auto;
-    font-family: "Hiragino Maru Gothic Pro";
-    border: 1px solid #d4d4d4;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-
-  textarea {
-    width: 100%;
-    min-height: 190px;
-    font-family: "Hiragino Maru Gothic Pro";
-    border: 1px solid #d4d4d4;
-    border-radius: 5px;
     resize: none;
-    padding: 10px;
-    font-size: 12px;
-  }
-
-  .cancel-btn {
   }
 
   .register-btn {
-    float: right;
+    display: inline-block;
+    padding: 10px;
   }
 
-  input[type="submit"] {
-    margin: 10px 0 0 auto;
-    border-radius: 30px;
-    background-color: azure;
-    padding: 5px 10px;
-    border: 1px solid #d4d4d4;
-    font-size: 10px;
+  .cancel-btn {
+    display: inline-block;
+    padding: 25px;
   }
 
-  .collection-select-form {
-    padding: 5px;
-    margin-top: 10px;
-    font-size: 12px;
+  // ======================================================
+  // ======================== show ========================
+  // ======================================================
+  .edit-btn {
+    width: 80px;
   }
 
-  .category-form.is-hidden {
-    display: none;
+  .content-title {
+    font-size: 25px;
+    width: auto;
   }
 
+  .content-body {
+    h3 {
+      width: auto;
+      margin-left: 0;
+      padding: 5px;
+      color: white;
+      font-size: 20px;
+      background: linear-gradient(90deg, darkred, darkred, white);
+    }
+
+    p {
+      margin: 10px 5px 0 5px;
+      font-size: 13px;
+    }
+  }
 }
 
 // スマホ用
 @media screen and (max-width: 500px) {
   // =======================================================
-  // ======================== index ========================
+  // ===================== top & index =====================
   // =======================================================
+  .btn-container {
+    padding-top: 30px;
+  }
+
+  .new-btn {
+    float: none;
+  }
+
   .index-title {
     width: auto;
     margin: 10px;
@@ -423,93 +347,52 @@ input[type="submit"] {
     font-size: 10px;
   }
 
-  // ====================  ====================
-  // ====== show ======
-  .page-title-container {
-    margin: 0 auto;
-    padding-top: 50px;
+  // ======================================================
+  // ======================== show ========================
+  // ======================================================
+  .edit-btn {
+    width: 80px;
+  }
+
+  .content-title {
+    margin: 10px auto;
+    font-size: 20px;
     width: auto;
   }
 
-  .form-error {
-    font-size: 9px;
-    text-align: left;
-    color: red;
+  .content-body {
+    h3 {
+      width: auto;
+      margin-left: 0;
+      padding: 5px;
+      text-align: center;
+      color: white;
+      font-size: 15px;
+      background: linear-gradient(darkred, darkred);
+    }
+
+    p {
+      margin: 10px 5px 0 5px;
+      font-size: 13px;
+    }
   }
 
-  .header-edit {
-    text-align: right;
+  // ======================================================
+  // ======================== edit ========================
+  // ======================================================
+  .sp-form-name {
+    padding-top: 20px;
   }
 
-  .page-title {
-    font-size: 18px;
-    font-weight: bold;
-    font-family: "Hiragino Maru Gothic Pro";
+  .content-form-title {
+    font-size: 20px;
   }
 
-  .page-body-container {
-    margin: 0 auto;
-  }
-
-  .page-body {
+  .content-form-index {
     font-size: 15px;
-    font-family: "Hiragino Maru Gothic Pro";
   }
 
-  // ====== edit ======
-  .edit-form-name {
-    font-size: 10px;
-    font-weight: bold;
-    margin-left: 10px;
-    margin-bottom: 0;
+  .content-form-detail {
+    font-size: 13px;
   }
-
-  .page-title input {
-    width: 100%;
-    font-size: 12px;
-    padding: 5px;
-    margin: 0 auto;
-    font-family: "Hiragino Maru Gothic Pro";
-    border: 1px solid #d4d4d4;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-
-  textarea {
-    width: 100%;
-    min-height: 190px;
-    font-family: "Hiragino Maru Gothic Pro";
-    border: 1px solid #d4d4d4;
-    border-radius: 5px;
-    resize: none;
-    padding: 10px;
-    font-size: 12px;
-  }
-
-  .cancel-btn {
-  }
-
-  .register-btn {
-    float: right;
-  }
-
-  input[type="submit"] {
-    margin: 10px 0 0 auto;
-    border-radius: 30px;
-    background-color: azure;
-    padding: 5px 10px;
-    border: 1px solid #d4d4d4;
-    font-size: 10px;
-  }
-
-  .collection-select-form {
-    padding: 5px;
-    margin-top: 10px;
-    font-size: 12px;
-  }
-
-  .category-form.is-hidden {
-    display: none;
-  }
-
 }

@@ -1,18 +1,14 @@
-<%= form_with model: @new_category, url: {controller: 'home', action: 'create_category'} do |new_category| %>
-  <div class="page-container">
-    <div class="category-form-body">
-      <% @new_category.errors.full_messages.each do |message| %>
-        <div class="form-error">
-          <%= message %>
-        </div>
-      <% end %>
-      <p class="edit-form-name">メニュー名</p>
-      <%= new_category.text_field :menu_name %>
-      <p class="edit-form-name">カテゴリ名 ※要半角！</p>
-      <%= new_category.text_field :menu_url %>
-      <div class="btn-align">
-        <%= new_category.submit 'これでよし！', id: 'category-registry-btn' %>
-      </div>
+<div class="page-container">
+  <div id="category-container">
+  <%= form_with model: @new_category, url: {controller: 'home', action: 'create_category'} do |new_category| %>
+    <p class="form-name sp-form-name">メニュー名</p>
+    <%= new_category.text_field :menu_name, class: "form-body category-form" %>
+    <p class="form-name">カテゴリ名 ※要半角！</p>
+    <%= new_category.text_field :menu_url, class: "form-body category-form" %>
+    <div id="category-btn">
+      <%= new_category.submit 'これでよし！', class: 'btn register-btn' %>
+  <% end %>
+      <%= button_to 'やっぱやめ…', '/top', method: :get, class: "btn" %>
     </div>
   </div>
-<% end %>
+</div>
